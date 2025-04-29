@@ -219,14 +219,15 @@
 <script>
   function mover(id, direcao) {
     const inner = document.getElementById(id);
-    const total = inner.children.length;
+    const cards = inner.querySelectorAll('.card, .video-card');
+    const total = cards.length;
     const isMobile = window.innerWidth <= 768;
+    const cardWidth = cards[0].offsetWidth + 20; // largura do card + gap
     const visible = isMobile ? 1 : 3;
-    const step = 320;
-    const maxShift = step * (total - visible);
+    const maxShift = cardWidth * (total - visible);
 
     let atual = parseInt(inner.getAttribute('data-pos')) || 0;
-    atual += direcao * step;
+    atual += direcao * cardWidth;
     if (atual < 0) atual = 0;
     if (atual > maxShift) atual = maxShift;
 
@@ -234,6 +235,7 @@
     inner.setAttribute('data-pos', atual);
   }
 </script>
+
 
 </body>
 </html>
