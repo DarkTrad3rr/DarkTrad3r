@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DarkTrad3r</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 204, 102, 0.7); }
+      50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 204, 102, 0.7); }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 204, 102, 0.7); }
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a url('fundo1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fundo2.jpg'), url('fundo3.jpg');
+      background-size: cover, cover;
+      background-position: center, center;
+      opacity: 0.8;
+      z-index: -1;
+      mix-blend-mode: multiply;
+    }
+
+    header {
+      padding: 40px 20px 10px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      color: #00ff99;
+      text-shadow: 0 0 10px rgba(0,255,153,0.5);
+    }
+
+    .botao-topo {
+      display: inline-block;
+      margin-top: 15px;
+      background: #00cc66;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 1.1em;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 1.6em;
+      color: #00cc66;
+    }
+
+    .carrossel-wrapper, .carrossel-videos-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .carrossel, .carrossel-videos {
+      position: relative;
+      overflow: hidden;
+      width: 960px;
+      padding: 30px 0;
+      justify-content: start;
+    }
+
+    .carrossel-inner, .carrossel-videos-inner {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.8s ease;
+    }
+
+    .card, .video-card {
+      background: rgba(26, 26, 26, 0.9);
+      border-radius: 12px;
+      overflow: hidden;
+      width: 300px;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .card img, .video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .seta {
+      cursor: pointer;
+      font-size: 1.5em;
+      color: black;
+      background: #00cc66;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      user-select: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .seta:hover {
+      background: #00994d;
+      transform: scale(1.1);
+    }
+
+    .cta {
+      margin-top: 30px;
+    }
+
+    .cta a {
+      background: #00cc66;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      text-decoration: none;
+      transition: background 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    .cta a:hover {
+      background: #00994d;
+    }
+
+    @media (max-width: 768px) {
+      .card, .video-card {
+        width: 80%;
+      }
+      .carrossel, .carrossel-videos {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Transforme seu operacional em lucro</h1>
+  <a class="botao-topo" href="https://t.me/PROJETOGAMMA" target="_blank">Acesse Agora o Canal</a>
+  <p>Confira quem já foi aprovado nas maiores mesas proprietárias do mundo!</p>
+</header>
+
+<h2>📸 Depoimentos em Imagens</h2>
+<div class="carrossel-wrapper">
+  <span class="seta" onclick="mover('carrosselInner', -1)">&#8592;</span>
+  <div class="carrossel" id="carrossel">
+    <div class="carrossel-inner" id="carrosselInner">
+      <div class="card"><img src="img1.jpg" alt="Depoimento 1"></div>
+      <div class="card"><img src="img2.jpg" alt="Depoimento 2"></div>
+      <div class="card"><img src="img3.jpg" alt="Depoimento 3"></div>
+      <div class="card"><img src="img4.jpg" alt="Depoimento 4"></div>
+      <div class="card"><img src="img5.jpg" alt="Depoimento 5"></div>
+      <div class="card"><img src="img6.jpg" alt="Depoimento 6"></div>
+      <div class="card"><img src="img7.jpg" alt="Depoimento 7"></div>
+      <div class="card"><img src="img8.jpg" alt="Depoimento 8"></div>
+      <div class="card"><img src="img9.jpg" alt="Depoimento 9"></div>
+      <div class="card"><img src="img10.jpg" alt="Depoimento 10"></div>
+      <div class="card"><img src="img11.jpg" alt="Depoimento 11"></div>
+      <div class="card"><img src="img12.jpg" alt="Depoimento 12"></div>
+      <div class="card"><img src="img13.jpg" alt="Depoimento 13"></div>
+      <div class="card"><img src="img14.jpg" alt="Depoimento 13"></div>
+    </div>
+  </div>
+  <span class="seta" onclick="mover('carrosselInner', 1)">&#8594;</span>
+</div>
+
+<a class="botao-topo" href="https://t.me/PROJETOGAMMA" target="_blank">Acesse Agora o Canal</a>
+
+<h2>🎥 Depoimentos em Vídeo</h2>
+<div class="carrossel-videos-wrapper">
+  <span class="seta" onclick="mover('carrosselVideosInner', -1)">&#8592;</span>
+  <div class="carrossel-videos" id="carrosselVideos">
+    <div class="carrossel-videos-inner" id="carrosselVideosInner">
+      <div class="video-card"><video src="video1.mp4" controls></video></div>
+      <div class="video-card"><video src="video2.mp4" controls></video></div>
+      <div class="video-card"><video src="video3.mp4" controls></video></div>
+      <div class="video-card"><video src="video4.mp4" controls></video></div>
+      <div class="video-card"><video src="video5.mp4" controls></video></div>
+      <div class="video-card"><video src="video6.mp4" controls></video></div>
+      <div class="video-card"><video src="video7.mp4" controls></video></div>
+      <div class="video-card"><video src="video8.mp4" controls></video></div>
+      <div class="video-card"><video src="video9.mp4" controls></video></div>
+      <div class="video-card"><video src="video10.mp4" controls></video></div>
+    </div>
+  </div>
+  <span class="seta" onclick="mover('carrosselVideosInner', 1)">&#8594;</span>
+</div>
+
+<div class="cta">
+  <a class="botao-topo" href="https://t.me/PROJETOGAMMA" target="_blank">Acesse Agora o Canal</a>
+</div>
+
+<script>
+  function mover(id, direcao) {
+    const inner = document.getElementById(id);
+    const total = inner.children.length;
+    const isMobile = window.innerWidth <= 768;
+    const visible = isMobile ? 1 : 3;
+    const step = 320;
+    const maxShift = step * (total - visible);
+
+    let atual = parseInt(inner.getAttribute('data-pos')) || 0;
+    atual += direcao * step;
+    if (atual < 0) atual = 0;
+    if (atual > maxShift) atual = maxShift;
+
+    inner.style.transform = `translateX(-${atual}px)`;
+    inner.setAttribute('data-pos', atual);
+  }
+</script>
+
+</body>
+</html>
+
+<div class="video-card">
+  <iframe width="100%" height="200" src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</div>
+
